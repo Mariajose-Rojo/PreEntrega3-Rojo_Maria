@@ -27,13 +27,19 @@ body{
 
 /* ------------------- HEADER (logo, lista navegacion y banner) -------------------*/ 
     /* 1) Logo */
-    .header a {
+
+    .header{
+        /* sombra general */
+        box-shadow: 0px 20px 20px #d8d8d8;
+    }
+
+    .header__logo{
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: flex-start;
         background-color: rgb(108, 191, 243);
-    } 
+    }
     
     .header .logo_desk{
         width: 220px;
@@ -42,7 +48,19 @@ body{
     
     .logo_cellphone{ display: none;}
     
+    /* pseudoclase para el navegador */
 
+    .header .container-fluid .nav-item a:hover {
+        color: rgb(169, 17, 17);
+        background-color: rgb(108, 191, 243);
+        margin: 2px;
+
+    }
+    /* .header__ul li a:hover {
+        color: black;
+        background-color: rgb(112, 232, 238);
+        margin: 2px;
+        } */
 
 
     /* -------------------------------- MEDIA QUERIES ------------------------------*/
@@ -51,7 +69,7 @@ body{
 
 @media (max-width: 700px){
     /* imagenes del logotipo */
-    .header a {
+    .header__logo {
         justify-content: center;
         background-color: rgb(243, 136, 230);
     } 

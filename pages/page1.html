@@ -11,7 +11,44 @@
 
 </head>
 <body>
+    <header class="header">
+        <!-- Logo -->
+        <a href="../index.html" class="header__logo">
+            <!-- img para desktop -->
+        <img src="../resources/logo__Grande-05.png" alt="logo dona con texto" class="logo_desk">
+            <!-- img para movil -->
+        <img src="../resources/logo_chico-02.png" alt="logo dona"  class="logo_cellphone">
+        </a>
+        <!-- barra de navegacion -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <!-- modifico los href con cada link de pag que necesito -->
+            <div class="container-fluid">
+              <a class="navbar-brand" href="../index.html">Inicio</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- inicio de la lista desorganizada de items -->
+                <ul class="navbar-nav">
 
+                  <li class="nav-item">
+                    <a class="nav-link" href="./page1.html">Catalogo</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./page2.html">Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./page3.html">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./page4.html">Contacto</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <h1>page1</h1>
     <!-- JS de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
