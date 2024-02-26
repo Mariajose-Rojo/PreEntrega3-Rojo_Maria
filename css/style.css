@@ -56,27 +56,125 @@ body{
         margin: 2px;
 
     }
-    /* .header__ul li a:hover {
-        color: black;
-        background-color: rgb(112, 232, 238);
-        margin: 2px;
-        } */
+  
+
+        /* 2) BANNER*/
+.header .banner_promo img{
+    /* le pongo 100vw si quiero que ocupe el total de la pantalla y 100% si quiero que ocupe el total de mi caja*/
+    width: 100%;
+}
+.banner_celu {display: none;}
+
+
+
+
+/* -------------------------- GRILLAS -------------------------- */
+
+/* ---------PAge 1------------------ */
+
+.container_p1{
+    background-color: antiquewhite;
+    padding: 1rem;
+}
+
+.container_p1 .titulo1{
+    text-align: center;
+    padding-bottom: 1rem;
+    /* text-shadow:  -4px 13px 15px #0d6efd54; */
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.container_p1 .box_container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 300px;
+    gap: 1rem;
+}
+
+.container_p1 .box_container .box{
+    box-shadow: 0 5px 10px rgb(100, 98, 98);
+    border-radius: 6px;
+    background-color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.container_p1 .box_container .box img{
+    height: 90px;
+}
+
+.container_p1 .box_container .box h3{
+    font-size: 22px;
+    padding: 10px;
+}
+
+.container_p1 .box_container .box p{
+    font-size: 15px;
+}
+
+.container_p1 .box_container .box .boton{
+    margin-top: 10px;
+    display: inline-block;
+    background-color: rgb(243, 136, 230);
+    font-size: 17px;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+/* Pseudoclases: */
+.container_p1 .box_container .box .boton:hover{
+    background-color: rgb(108, 191, 243);
+    /* margin: 1px; */
+}
+
+.container_p1 .box_container .box:hover{
+    box-shadow: 0 10px 15px rgb(100, 98, 98) ;
+    transform: scale(1.03);
+}
+
+
+
+
+
+
 
 
     /* -------------------------------- MEDIA QUERIES ------------------------------*/
 
 /* Querys para modificar segun la medida de la pantalla (modelo responsivo) */
+@media (max-width: 900px){
+
+    .container_p1 .box_container{
+         grid-template-columns: repeat(2, 2fr); 
+        }
+
+}
+
 
 @media (max-width: 700px){
-    /* imagenes del logotipo */
+    /* cambiar el color del fondo del navegador y ubicacion del logo*/
     .header__logo {
         justify-content: center;
         background-color: rgb(243, 136, 230);
     } 
+
+    /* imagenes del logotipo */
     .logo_desk {display: none;}
     .logo_cellphone { 
         display: block;
         width: 100px;
+    }
+
+    /* imagenes del banner */
+    .banner_compu { display: none;}
+    .banner_celu { display: block;}
+
+    /* Cambiar el tamaño de la grilla del catalogo */
+    .container_p1 .box_container{
+        grid-template-columns: repeat(1, 100%); 
     }
 
 }
