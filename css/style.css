@@ -232,6 +232,7 @@ body{
 
 .grid_page3{
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
         "img0 img0 img1 img2"
@@ -240,6 +241,7 @@ body{
     grid-auto-rows: 300px;
     gap: 1rem;
     margin-top: 1rem;
+    padding: .5rem;
 }
 
 .grid_page3 .img_0{
@@ -297,6 +299,52 @@ body{
 .grid_page3 a h2:hover{
     color: rgb(0, 213, 255);
 }
+
+
+
+/* ------------------ PAGE 4 ------------------ */
+.grid_page4 {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "form form form aside"
+        "footer footer footer footer"
+
+    ;
+    /* grid-auto-rows: 300px; */
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: .5rem;
+}
+
+.grid_page4 .apartado{
+    grid-area: aside;
+    background-color: rgb(116, 238, 238);
+}
+
+.grid_page4 .form{
+    grid-area: form;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.grid_page4 .footer{
+    grid-area: footer;
+    background-color:rgb(239, 165, 74);
+}
+
+
+
+
+
+
+
+
+
     /* -------------------------------- MEDIA QUERIES ------------------------------*/
 /* Mi proyecto, estrategia resposive = Mobile Last */
 /* Querys para modificar segun la medida de la pantalla (modelo responsivo) */
@@ -319,6 +367,13 @@ body{
             ;
         }    
 
+    /* Modificar medida page 4, paso de grid a flex en columna */
+    .grid_page4 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+     }
 }
 
 
