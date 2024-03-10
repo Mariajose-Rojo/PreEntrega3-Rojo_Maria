@@ -1,0 +1,140 @@
+/* -----------------------INDEX--------------------------- */
+/* ------------------- HEADER (logo, lista navegacion y banner) -------------------*/ 
+    /* 1) Logo */
+
+    .header{
+        // sombra general 
+        // box-shadow: 0px 20px 20px #d8d8d8;
+
+        // barra de navegacion con bootstrap =para todos
+        .container-fluid .nav-item a:hover {
+            color: rgb(169, 17, 17);
+            background-color: rgb(108, 191, 243);
+            margin: 2px;
+    
+        }
+        
+        .header__logo{
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: rgb(108, 191, 243);
+
+            .logo_desk{
+                width: 220px;
+                margin-top: 7px;
+                margin-bottom: 7px;
+            }
+            .logo_cellphone{ display: none;}
+
+        }
+        
+        
+        .header__banner{
+            
+            .banner_promo img{
+                /* le pongo 100vw si quiero que ocupe el total de la pantalla y 100% si quiero que ocupe el total de mi caja*/
+                width: 100%;
+            }
+
+            .banner_celu {display: none;}
+
+        } 
+            
+        
+    }
+
+
+    
+    /* pseudoclase para el navegador = para todos */
+
+    .header .container-fluid .nav-item a:hover {
+        color: rgb(169, 17, 17);
+        background-color: rgb(108, 191, 243);
+        margin: 2px;
+
+    }
+  
+
+
+
+
+
+/* -------------------------- GRILLAS -------------------------- */
+
+
+.grid_container{
+    background-color:  antiquewhite;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "section section section aside"
+    "article article article aside"
+    "footer footer footer footer"
+    ;
+
+    gap: 1rem;
+    margin-top: 1rem;
+
+    .section_top {
+        grid-area: section;
+        background-color: aquamarine;
+    }
+    
+    article{
+        grid-area: article;
+        background-color: rgb(255, 250, 96);
+    }
+    aside{
+        grid-area: aside;
+        background-color: rgb(251, 118, 223);
+    }
+
+
+    .footer{
+        grid-area: footer;
+        background-color: rgb(239, 165, 74);
+    }
+
+}
+
+
+@media (max-width: 600px){
+    /* cambiar el color del fondo del navegador y ubicacion del logo*/
+    .header{
+
+        .header__logo {
+            justify-content: center;
+            background-color: rgb(243, 136, 230);
+    
+            /* imagenes del logotipo = para todos*/
+            .logo_desk {display: none;}
+            .logo_cellphone { 
+                display: block;
+                width: 100px;
+            }
+        } 
+    
+        .header__banner{
+            // imagenes del banner = solo del index
+            .banner_compu { display: none;}
+            .banner_celu { display: block;}
+    
+        }
+
+    }
+
+    /* cambiar tamaño de la grilla del index */
+    .grid_container{
+        grid-template-areas: 
+        "section section section section"
+        "article article article article"
+        "aside aside aside aside"
+        "footer footer footer footer"
+        ;
+    }
+
+
+}

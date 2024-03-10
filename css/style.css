@@ -1,0 +1,87 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif; }
+
+body {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  padding: 1rem; }
+
+/* pseudoclase para el navegador = para todos */
+/* -----------------------INDEX--------------------------- */
+/* ------------------- HEADER (logo, lista navegacion y banner) -------------------*/
+/* 1) Logo */
+.header .container-fluid .nav-item a:hover {
+  color: #a91111;
+  background-color: #6cbff3;
+  margin: 2px; }
+
+.header .header__logo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #6cbff3; }
+  .header .header__logo .logo_desk {
+    width: 220px;
+    margin-top: 7px;
+    margin-bottom: 7px; }
+  .header .header__logo .logo_cellphone {
+    display: none; }
+
+.header .header__banner .banner_promo img {
+  /* le pongo 100vw si quiero que ocupe el total de la pantalla y 100% si quiero que ocupe el total de mi caja*/
+  width: 100%; }
+
+.header .header__banner .banner_celu {
+  display: none; }
+
+/* pseudoclase para el navegador = para todos */
+.header .container-fluid .nav-item a:hover {
+  color: #a91111;
+  background-color: #6cbff3;
+  margin: 2px; }
+
+/* -------------------------- GRILLAS -------------------------- */
+.grid_container {
+  background-color: antiquewhite;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "section section section aside" "article article article aside" "footer footer footer footer";
+  gap: 1rem;
+  margin-top: 1rem; }
+  .grid_container .section_top {
+    grid-area: section;
+    background-color: aquamarine; }
+  .grid_container article {
+    grid-area: article;
+    background-color: #fffa60; }
+  .grid_container aside {
+    grid-area: aside;
+    background-color: #fb76df; }
+  .grid_container .footer {
+    grid-area: footer;
+    background-color: #efa54a; }
+
+@media (max-width: 600px) {
+  /* cambiar el color del fondo del navegador y ubicacion del logo*/
+  .header .header__logo {
+    justify-content: center;
+    background-color: #f388e6;
+    /* imagenes del logotipo = para todos*/ }
+    .header .header__logo .logo_desk {
+      display: none; }
+    .header .header__logo .logo_cellphone {
+      display: block;
+      width: 100px; }
+  .header .header__banner .banner_compu {
+    display: none; }
+  .header .header__banner .banner_celu {
+    display: block; }
+  /* cambiar tamaño de la grilla del index */
+  .grid_container {
+    grid-template-areas: "section section section section" "article article article article" "aside aside aside aside" "footer footer footer footer"; } }
