@@ -11,40 +11,40 @@ body {
   font-size: 1.2rem;
   padding: 1rem; }
 
+.header {
+  box-shadow: 0px 20px 20px #d8d8d8; }
+  .header .container-fluid .nav-item a:hover {
+    color: #a91111;
+    background-color: #6cbff3;
+    margin: 2px; }
+  .header .header__logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #6cbff3; }
+    .header .header__logo .logo_desk {
+      width: 220px;
+      margin-top: 7px;
+      margin-bottom: 7px; }
+    .header .header__logo .logo_cellphone {
+      display: none; }
+
 /* pseudoclase para el navegador = para todos */
-/* -----------------------INDEX--------------------------- */
-/* ------------------- HEADER (logo, lista navegacion y banner) -------------------*/
-/* 1) Logo */
 .header .container-fluid .nav-item a:hover {
   color: #a91111;
   background-color: #6cbff3;
   margin: 2px; }
 
-.header .header__logo {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: #6cbff3; }
-  .header .header__logo .logo_desk {
-    width: 220px;
-    margin-top: 7px;
-    margin-bottom: 7px; }
-  .header .header__logo .logo_cellphone {
-    display: none; }
-
+/* -----------------------INDEX--------------------------- */
+/* ------------------- HEADER (logo, lista navegacion y banner) -------------------*/
+/* 1) Logo */
 .header .header__banner .banner_promo img {
   /* le pongo 100vw si quiero que ocupe el total de la pantalla y 100% si quiero que ocupe el total de mi caja*/
   width: 100%; }
 
 .header .header__banner .banner_celu {
   display: none; }
-
-/* pseudoclase para el navegador = para todos */
-.header .container-fluid .nav-item a:hover {
-  color: #a91111;
-  background-color: #6cbff3;
-  margin: 2px; }
 
 /* -------------------------- GRILLAS -------------------------- */
 .grid_container {
@@ -68,6 +68,18 @@ body {
     background-color: #efa54a; }
 
 @media (max-width: 600px) {
+  /* cambiar tamaño de la grilla del index */
+  .grid_container {
+    grid-template-areas: "section section section section" "article article article article" "aside aside aside aside" "footer footer footer footer"; } }
+
+.footer {
+  background-color: #efa54a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; }
+
+@media (max-width: 600px) {
   /* cambiar el color del fondo del navegador y ubicacion del logo*/
   .header .header__logo {
     justify-content: center;
@@ -81,7 +93,4 @@ body {
   .header .header__banner .banner_compu {
     display: none; }
   .header .header__banner .banner_celu {
-    display: block; }
-  /* cambiar tamaño de la grilla del index */
-  .grid_container {
-    grid-template-areas: "section section section section" "article article article article" "aside aside aside aside" "footer footer footer footer"; } }
+    display: block; } }
