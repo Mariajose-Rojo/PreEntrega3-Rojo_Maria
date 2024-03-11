@@ -23,7 +23,7 @@ body {
   position: relative;
   min-height: 100vw; }
 
-.titulo_principal, .main_nosotros .titulo1, .main_catalogo .titulo1, .main_blog h1, .grid_contacto .cabecera .titulo1 {
+.titulo_principal, .main_index .titulo1, .main_nosotros .titulo1, .main_catalogo .titulo1, .main_blog h1, .grid_contacto .cabecera .titulo1 {
   font-family: "Outfit", sans-serif;
   font-size: 3rem;
   font-weight: 900px;
@@ -68,30 +68,51 @@ body {
   display: none; }
 
 /* -------------------------- GRILLAS -------------------------- */
-.grid_container {
-  background-color: antiquewhite;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "section section section aside" "article article article aside" "footer footer footer footer";
-  gap: 1rem;
-  margin-top: 1rem; }
-  .grid_container .section_top {
-    grid-area: section;
-    background-color: aquamarine; }
-  .grid_container article {
-    grid-area: article;
-    background-color: #fffa60; }
-  .grid_container aside {
-    grid-area: aside;
-    background-color: #fb76df; }
-  .grid_container .footer {
-    grid-area: footer;
-    background-color: #efa54a; }
+.main_index {
+  margin-bottom: 1rem; }
+  .main_index .grid_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "section1 img_top" "img_oferta section2" "section3 img_snack";
+    grid-auto-rows: minmax(320px, auto);
+    row-gap: 1rem;
+    margin-top: 1rem; }
+    .main_index .grid_container .texto_top {
+      grid-area: section1;
+      background-color: aquamarine; }
+    .main_index .grid_container .img_top {
+      grid-area: img_top;
+      background-color: #fffa60;
+      background-image: url("https://dunkin.cl/wp-content/uploads/2022/04/donuts-inicio-chile-300x300.png");
+      background-position: center;
+      background-size: contain;
+      /* Ajusta el tamaño de la imagen para que se ajuste dentro del contenedor */
+      background-repeat: no-repeat; }
+    .main_index .grid_container .texto_ofertas {
+      grid-area: section2;
+      background-color: #fb76df; }
+    .main_index .grid_container .img_ofertas {
+      grid-area: img_oferta;
+      background-color: #f388e6;
+      background-image: url("https://dunkindonuts12.files.wordpress.com/2019/06/745x420-menu.png");
+      background-position: center;
+      background-size: contain;
+      /* Ajusta el tamaño de la imagen para que se ajuste dentro del contenedor */
+      background-repeat: no-repeat; }
+    .main_index .grid_container .texto_snack {
+      grid-area: section3;
+      background-color: aquamarine; }
+    .main_index .grid_container .img_snack {
+      grid-area: img_snack;
+      background-color: #fffa60;
+      background-image: url("https://quirkymarketingcalendar.com/wp-content/uploads/2013/04/munchkins-from-Dunkin-Donuts.png");
+      background-position: center;
+      background-size: contain;
+      /* Ajusta el tamaño de la imagen para que se ajuste dentro del contenedor */
+      background-repeat: no-repeat; }
 
 @media (max-width: 600px) {
-  /* cambiar tamaño de la grilla del index */
-  .grid_container {
-    grid-template-areas: "section section section section" "article article article article" "aside aside aside aside" "footer footer footer footer"; } }
+  /* cambiar tamaño de la grilla del index */ }
 
 /* ------------------ PAGE 2------------------ */
 /* la clase se puede reciclar para distintas grillas:mantengo el estilo general */

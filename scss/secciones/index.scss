@@ -22,38 +22,61 @@
 
 /* -------------------------- GRILLAS -------------------------- */
 
+.main_index{
 
-.grid_container{
-    background-color:  antiquewhite;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: 
-    "section section section aside"
-    "article article article aside"
-    "footer footer footer footer"
-    ;
-
-    gap: 1rem;
-    margin-top: 1rem;
-
-    .section_top {
-        grid-area: section;
-        background-color: aquamarine;
+    margin-bottom: 1rem;
+    .titulo1{
+        @extend .titulo_principal
     }
+
+    .grid_container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "section1 img_top"
+        "img_oferta section2"
+        "section3 img_snack"
+        ;
+        grid-auto-rows: minmax(320px, auto);
+
+        row-gap: 1rem;
+        margin-top: 1rem;
     
-    article{
-        grid-area: article;
-        background-color: rgb(255, 250, 96);
-    }
-    aside{
-        grid-area: aside;
-        background-color: rgb(251, 118, 223);
-    }
+        .texto_top {
+            grid-area: section1;
+            background-color: aquamarine;
+        }
+    
+        .img_top{
+            grid-area: img_top;
+            background-color: rgb(255, 250, 96);
+            @include img_fondo('https://dunkin.cl/wp-content/uploads/2022/04/donuts-inicio-chile-300x300.png');
+        }
+        
+        // https://www.iwaymagazine.com/cdn/shop/articles/Kaffe_KK.png?v=1538445318
+        
+        .texto_ofertas{
+            grid-area: section2;
+            background-color: rgb(251, 118, 223);
+        }
+    
+        .img_ofertas{
+            grid-area: img_oferta;
+            background-color:$rosa; 
+            @include img_fondo('https://dunkindonuts12.files.wordpress.com/2019/06/745x420-menu.png');
+        }
 
-
-    .footer{
-        grid-area: footer;
-        background-color: rgb(239, 165, 74);
+        .texto_snack {
+            grid-area: section3;
+            background-color: aquamarine;
+        }
+    
+        .img_snack{
+            grid-area: img_snack;
+            background-color: rgb(255, 250, 96);
+            @include img_fondo('https://quirkymarketingcalendar.com/wp-content/uploads/2013/04/munchkins-from-Dunkin-Donuts.png');
+        }
+    
     }
 
 }
@@ -62,14 +85,14 @@
 @media (max-width: 600px){
 
     /* cambiar tamaño de la grilla del index */
-    .grid_container{
-        grid-template-areas: 
-        "section section section section"
-        "article article article article"
-        "aside aside aside aside"
-        "footer footer footer footer"
-        ;
-    }
+    // .main_index .grid_container{
+    //     grid-template-areas: 
+    //     "section section section section"
+    //     "article article article article"
+    //     "aside aside aside aside"
+    //     "footer footer footer footer"
+    //     ;
+    // }
 
 
 }

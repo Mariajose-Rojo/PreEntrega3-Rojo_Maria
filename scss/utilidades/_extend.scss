@@ -8,3 +8,13 @@
     margin-top: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+
+// Defino un mixin para las imágenes de fondo, donde paso por parametro el url
+@mixin img_fondo($url) {
+    background-image: url($url);
+    // background-size: cover;
+    background-position: center;
+    background-size: contain; /* Ajusta el tamaño de la imagen para que se ajuste dentro del contenedor */
+    background-repeat: no-repeat;
+  }
