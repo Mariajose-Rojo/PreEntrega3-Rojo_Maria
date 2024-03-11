@@ -23,4 +23,14 @@
 
     }
 
+    .footer{
+        .g1_footer{
+            grid-template-columns: repeat(2,1fr);
+            grid-template-areas: 
+            "box1 box2"
+            "box3 box3"
+            ;
+        }
+    }
+
 }
