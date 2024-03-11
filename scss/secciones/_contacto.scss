@@ -1,0 +1,52 @@
+/* ------------------ PAGE 4 ------------------ */
+
+.grid_contacto{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "titulo titulo titulo"
+        "form form aside";
+    
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+
+    .cabecera{
+        grid-area: titulo;
+        background-color: $crema;
+
+        .titulo1{
+            @extend .titulo_principal;
+        }
+    }
+
+    .apartado{
+        grid-area: aside;
+        background-color: rgb(116, 238, 238);
+    }
+    
+    .form{
+        grid-area: form;
+        background-color: pink;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }   
+}
+
+
+    /* --------  MEDIA QUERY ----------*/
+/* Estrategia responsive = Mobile Last */
+@media (max-width: 900px){
+
+    /* Modificar medida page 4, paso de grid a flex en columna */
+    .grid_contacto{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+     }
+}

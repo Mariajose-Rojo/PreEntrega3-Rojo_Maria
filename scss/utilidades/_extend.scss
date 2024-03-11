@@ -1,0 +1,10 @@
+
+.titulo_principal{
+    font-family: $fuente_titulo; // Usar la variable para la tipografía
+    font-size: 3rem;
+    font-weight: 900px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}

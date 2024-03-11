@@ -1,9 +1,18 @@
 @charset "UTF-8";
+/* -------------------------------------------------------------------------------- */
+/* Outfit: font-family: "Outfit", sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+/* Poppins: font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal; */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Jost */
+/* -------------------------------------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif; }
+  font-family: "Poppins", sans-serif; }
 
 body {
   font-weight: 400;
@@ -13,6 +22,15 @@ body {
   padding-bottom: 3em;
   position: relative;
   min-height: 100vw; }
+
+.titulo_principal, .main_nosotros .titulo1, .main_catalogo .titulo1, .main_blog h1, .grid_contacto .cabecera .titulo1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 3rem;
+  font-weight: 900px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); }
 
 .header {
   box-shadow: 0px 20px 20px #d8d8d8; }
@@ -75,6 +93,209 @@ body {
   .grid_container {
     grid-template-areas: "section section section section" "article article article article" "aside aside aside aside" "footer footer footer footer"; } }
 
+/* ------------------ PAGE 2------------------ */
+/* la clase se puede reciclar para distintas grillas:mantengo el estilo general */
+/* grid con filas y columnas explicitas */
+.main_nosotros .grid_galery {
+  display: grid;
+  /* hago 4 columnas de una fraccion */
+  grid-template-columns: repeat(5, 1fr);
+  /* uso auto-rows porque quiero q todas mis filas midan lo mismo */
+  grid-auto-rows: 400px;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: antiquewhite; }
+  .main_nosotros .grid_galery .grid_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* hacer los bordes redondeados */
+    border-radius: 8px;
+    border: solid 3px #e8ceac;
+    /* hacer que la imagen se ajuste a la medida de mi grilla */
+    background-size: cover;
+    background-position: center; }
+
+/* --------  MEDIA QUERY ----------*/
+/* Estrategia responsive = Mobile Last */
+@media (max-width: 900px) {
+  .main_nosotros .grid_galery {
+    /* hago 4 columnas de dos fraccion */
+    grid-template-columns: repeat(2, 2fr); } }
+
+@media (max-width: 600px) {
+  /*Cambia el tamaño de la grilla de la galeria */
+  .main_nosotros .grid_galery {
+    grid-template-columns: repeat(1, 100%); } }
+
+/* ------------------ PAGE 1------------------ */
+.main_catalogo {
+  display: flex;
+  flex-direction: column; }
+  .main_catalogo .container_p1 {
+    background-color: antiquewhite;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem; }
+    .main_catalogo .container_p1 .box_container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding-top: 1.5rem; }
+
+.container_p1 .box_container .box {
+  box-shadow: 0 5px 10px #646262;
+  border-radius: 6px;
+  background-color: white;
+  text-align: center;
+  padding: 30px 20px; }
+  .container_p1 .box_container .box .boton {
+    /* margin-top: 10px; */
+    display: inline;
+    background-color: #f388e6;
+    font-size: 17px;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 6px;
+    margin-bottom: 7px; }
+  .container_p1 .box_container .box img {
+    height: 90px; }
+  .container_p1 .box_container .box h3 {
+    font-size: 22px;
+    padding: 10px; }
+  .container_p1 .box_container .box p {
+    font-size: 15px; }
+
+/* PSEUDOCLASES: */
+.container_p1 .box_container .box .boton:hover {
+  background-color: #6cbff3;
+  /* margin: 1px; */ }
+
+.container_p1 .box_container .box:hover {
+  box-shadow: 0 10px 15px #646262;
+  transform: scale(1.03); }
+
+/* --------  MEDIA QUERY ----------*/
+/* Estrategia responsive = Mobile Last */
+@media (max-width: 1000px) {
+  .main_catalogo .container_p1 .box_container {
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: 270px; } }
+
+@media (max-width: 600px) {
+  /* Cambiar el tamaño de la grilla del catalogo */
+  .main_catalogo .container_p1 .box_container {
+    grid-template-columns: repeat(1, 100%); } }
+
+/* ------------------ PAGE 3 ------------------ */
+.main_blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem; }
+  .main_blog .grid_page3 {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "img0 img0 img1 img2" "img3 img4 img5 img5";
+    grid-auto-rows: 300px;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+    .main_blog .grid_page3 .img_0 {
+      grid-area: img0;
+      background-color: aquamarine;
+      background-image: url("https://algunwey.com/wp-content/uploads/2018/07/curiosidades-donas-origen-historia.jpg");
+      background-size: cover;
+      background-position: center; }
+      .main_blog .grid_page3 .img_0 a {
+        text-decoration: none; }
+    .main_blog .grid_page3 .img_1 {
+      grid-area: img1;
+      background-color: #f6f68f;
+      background-image: url("https://mdr.ar/download/multimedia.miniatura.b1ff4d1dc341bf67.ZG9uYXMtY2FzZXJhc19taW5pYXR1cmEud2VicA%3D%3D.webp");
+      background-size: cover;
+      background-position: center; }
+      .main_blog .grid_page3 .img_1 a {
+        text-decoration: none; }
+    .main_blog .grid_page3 .img_2 {
+      grid-area: img2;
+      background-color: #ac6ce7;
+      background-image: url("https://www.gourmet.cl/wp-content/uploads/2022/10/RECETA-donuts-alta-9.jpg");
+      background-size: cover;
+      background-position: center; }
+      .main_blog .grid_page3 .img_2 a {
+        text-decoration: none; }
+    .main_blog .grid_page3 .img_3 {
+      grid-area: img3;
+      background-color: #3d3de3; }
+    .main_blog .grid_page3 .img_4 {
+      grid-area: img4;
+      background-color: #b7f759; }
+    .main_blog .grid_page3 .img_5 {
+      grid-area: img5;
+      background-color: pink; }
+    .main_blog .grid_page3 h2 {
+      color: white;
+      font-size: x-large;
+      text-align: center;
+      padding: 1rem;
+      text-shadow: 2px 2px 1px #211e1e; }
+
+/* Pseudoclase para la etiqueta <a> */
+.grid_page3 .img_1 a h2:visited {
+  color: #757585; }
+
+.grid_page3 a h2:hover {
+  color: #00d5ff; }
+
+/* --------  MEDIA QUERY ----------*/
+/* Estrategia responsive = Mobile Last */
+@media (max-width: 900px) {
+  .main_blog .grid_page3 {
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: "img0 img1" "img2 img3" "img4 img5"; } }
+
+@media (max-width: 600px) {
+  /* cambiar el tamaño de la grilla blog/page3 */
+  .main_blog .grid_page3 {
+    grid-template-columns: repeat(1, 100%);
+    grid-template-areas: "img0" "img1" "img2" "img3" "img4" "img5"; } }
+
+/* ------------------ PAGE 4 ------------------ */
+.grid_contacto {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "titulo titulo titulo" "form form aside";
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+  .grid_contacto .cabecera {
+    grid-area: titulo;
+    background-color: #fee9bd; }
+  .grid_contacto .apartado {
+    grid-area: aside;
+    background-color: #74eeee; }
+  .grid_contacto .form {
+    grid-area: form;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap; }
+
+/* --------  MEDIA QUERY ----------*/
+/* Estrategia responsive = Mobile Last */
+@media (max-width: 900px) {
+  /* Modificar medida page 4, paso de grid a flex en columna */
+  .grid_contacto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap; } }
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -85,57 +306,64 @@ body {
   font-size: 12px;
   width: 100%;
   margin: auto;
-  gap: 1rem; }
+  gap: 10px; }
   .footer .g1_footer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "box1 box2 box3";
+    display: flex;
+    align-items: flex-start;
+    justify-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     grid-gap: 1.5rem;
     width: 100%;
-    padding: 1rem;
-    align-items: center;
-    justify-items: center; }
-    .footer .g1_footer h4 {
+    padding: 1rem; }
+    .footer .g1_footer .box h4 {
       font-size: 20px;
       text-align: center;
       color: white;
       margin-bottom: 10px;
-      font-weight: 500; }
-    .footer .g1_footer ul li a {
-      font-size: 15px;
-      text-decoration: none;
-      color: #fff7f7;
-      display: block;
-      margin-bottom: 8px;
-      transition: all .3s ease; }
-    .footer .g1_footer .box1 {
-      grid-area: box1; }
-    .footer .g1_footer .box2 {
-      grid-area: box2; }
-    .footer .g1_footer .box3 {
-      grid-area: box3; }
-      .footer .g1_footer .box3 .red_social a {
+      font-weight: 550; }
+    .footer .g1_footer .box ul {
+      list-style-type: none; }
+      .footer .g1_footer .box ul li a {
+        font-size: 15px;
         text-decoration: none;
-        display: inline-block;
-        min-height: 40px;
-        width: 40px;
-        background-color: rgba(241, 255, 47, 0.608);
-        margin: 0 10px 10px 0;
-        text-align: center;
-        line-height: 40px;
-        border-radius: 50%;
-        color: white;
+        color: #fff7f7;
+        display: block;
+        margin-bottom: 8px;
         transition: all .5s ease; }
+    .footer .g1_footer .box .red_social a {
+      text-decoration: none;
+      display: inline-block;
+      min-height: 40px;
+      width: 40px;
+      background-color: rgba(241, 255, 47, 0.608);
+      margin: 0 10px 10px 0;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: white;
+      transition: all .5s ease; }
   .footer .g2_footer {
-    grid-area: g2_f; }
+    align-items: center; }
+    .footer .g2_footer p {
+      color: #4e4d4d; }
 
 /* pseudoclase para el footer = para todos */
-.fotter ul li a:hover {
-  color: white;
-  padding-left: 5px; }
+.footer .g1_footer .box a:hover {
+  color: #86EACC;
+  padding-left: 2px; }
 
-.fotter .g1_footer .box3 .red_social a:hover {
-  background-color: #52ff2f; }
+.footer .g1_footer .box .red_social a:hover {
+  background-color: #86EACC; }
+
+/* --------  MEDIA QUERY ----------*/
+/* Estrategia responsive = Mobile Last */
+@media (max-width: 640px) {
+  .footer .g1_footer {
+    justify-content: space-around; }
+  /* Cambiar el tamaño de la grilla del catalogo */
+  .main_catalogo .container_p1 .box_container {
+    grid-template-columns: repeat(1, 100%); } }
 
 @media (max-width: 600px) {
   /* cambiar el color del fondo del navegador y ubicacion del logo*/
