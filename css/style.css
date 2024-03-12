@@ -32,6 +32,21 @@ body {
   margin-top: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); }
 
+.boton_seleccion, .container_p1 .box_container .box .boton, .grid_contacto .form .form_container .form_submit {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 300px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #f388e6;
+  color: #333;
+  padding: 8px 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1); }
+
 .header {
   box-shadow: 0px 20px 20px #d8d8d8; }
   .header .container-fluid .nav-item a:hover {
@@ -79,9 +94,11 @@ body {
     margin-top: 1rem; }
     .main_index .grid_container .texto_top {
       grid-area: section1;
-      background-color: aquamarine; }
+      background-color: aquamarine;
+      box-shadow: -1px 2px 15px 0px #646262; }
     .main_index .grid_container .img_top {
       grid-area: img_top;
+      box-shadow: -1px 2px 15px 0px #646262;
       background-color: #fffa60;
       background-image: url("https://dunkin.cl/wp-content/uploads/2022/04/donuts-inicio-chile-300x300.png");
       background-position: center;
@@ -90,7 +107,8 @@ body {
       background-repeat: no-repeat; }
     .main_index .grid_container .texto_ofertas {
       grid-area: section2;
-      background-color: #fb76df; }
+      background-color: #fb76df;
+      box-shadow: -1px 2px 15px 0px #646262; }
     .main_index .grid_container .img_ofertas {
       grid-area: img_oferta;
       background-color: #f388e6;
@@ -171,15 +189,7 @@ body {
   text-align: center;
   padding: 30px 20px; }
   .container_p1 .box_container .box .boton {
-    /* margin-top: 10px; */
-    display: inline;
-    background-color: #f388e6;
-    font-size: 17px;
-    color: black;
-    text-decoration: none;
-    border-radius: 6px;
-    padding: 6px;
-    margin-bottom: 7px; }
+    /* margin-top: 10px; */ }
   .container_p1 .box_container .box img {
     height: 90px; }
   .container_p1 .box_container .box h3 {
@@ -190,8 +200,7 @@ body {
 
 /* PSEUDOCLASES: */
 .container_p1 .box_container .box .boton:hover {
-  background-color: #6cbff3;
-  /* margin: 1px; */ }
+  background-color: #6cbff3; }
 
 .container_p1 .box_container .box:hover {
   box-shadow: 0 10px 15px #646262;
@@ -301,11 +310,34 @@ body {
     background-color: #74eeee; }
   .grid_contacto .form {
     grid-area: form;
-    background-color: pink;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #fffcfc;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    box-shadow: -1px 2px 15px 0px #646262;
+    gap: 1.5rem; }
+    .grid_contacto .form .form_container {
+      margin-top: 1.5rem;
+      display: grid;
+      gap: 1rem; }
+      .grid_contacto .form .form_container .form_group {
+        position: relative;
+        color: #b1b0b0; }
+        .grid_contacto .form .form_container .form_group .form_input {
+          width: 100%;
+          font-family: Arial, Helvetica, sans-serif;
+          border-radius: 5px;
+          border-color: #b1b0b0; }
+      .grid_contacto .form .form_container .form_submit {
+        align-items: center;
+        justify-content: center; }
+
+.grid_contacto .form .form_container .form_submit:hover {
+  background-color: #6cbff3; }
 
 /* --------  MEDIA QUERY ----------*/
 /* Estrategia responsive = Mobile Last */

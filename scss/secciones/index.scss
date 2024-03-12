@@ -45,10 +45,12 @@
         .texto_top {
             grid-area: section1;
             background-color: aquamarine;
+            box-shadow: $sombra_box;
         }
     
         .img_top{
             grid-area: img_top;
+            box-shadow: $sombra_box;
             background-color: rgb(255, 250, 96);
             @include img_fondo('https://dunkin.cl/wp-content/uploads/2022/04/donuts-inicio-chile-300x300.png');
         }
@@ -58,6 +60,7 @@
         .texto_ofertas{
             grid-area: section2;
             background-color: rgb(251, 118, 223);
+            box-shadow: $sombra_box;
         }
     
         .img_ofertas{

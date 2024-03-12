@@ -9,6 +9,24 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.boton_seleccion{
+
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300px;
+    text-align: center;
+    text-decoration: none;
+    background-color: $rosa;
+    color: #333;
+
+    padding: 8px 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    cursor: pointer;
+    transition: all 0.3s ease; // Transición suave para la animación
+    box-shadow: $sombra;
+}
 
 // Defino un mixin para las imágenes de fondo, donde paso por parametro el url
 @mixin img_fondo($url) {

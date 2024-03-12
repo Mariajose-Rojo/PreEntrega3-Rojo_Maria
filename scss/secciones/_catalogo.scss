@@ -38,14 +38,15 @@
     
     .boton{
         /* margin-top: 10px; */
-        display: inline;
-        background-color: rgb(243, 136, 230);
-        font-size: 17px;
-        color: black;
-        text-decoration: none;
-        border-radius: 6px;
-        padding: 6px;
-        margin-bottom: 7px;
+        // display: inline;
+        // background-color: rgb(243, 136, 230);
+        // font-size: 17px;
+        // color: black;
+        // text-decoration: none;
+        // border-radius: 6px;
+        // padding: 6px;
+        // margin-bottom: 7px;
+        @extend .boton_seleccion;
     }
 
     img{
@@ -66,8 +67,7 @@
 
 /* PSEUDOCLASES: */
 .container_p1 .box_container .box .boton:hover{
-    background-color: rgb(108, 191, 243);
-    /* margin: 1px; */
+    background-color: $celeste;
 }
 
 .container_p1 .box_container .box:hover{

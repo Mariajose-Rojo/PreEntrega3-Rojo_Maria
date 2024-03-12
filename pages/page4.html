@@ -68,19 +68,27 @@
         </aside>
   
         <section class="form">
-          <h2>Ingresa a tu cuenta</h2>
+          <div>
+            <h2>Ingresa a tu cuenta</h2>
+            <p>¿Nuevo usuario? 
+              <a href="#" class="form_link">Entra aquí</a></p>
+          </div>
           <!-- FORMULARIO (con sus etiquetas propias)-->
-          <form class="formulario" action="#" method="get">
-              <label for="nombre">Usuario</label>
-              <input type="text" id="nombre" name="nombre">
-              <br> <br>
-              <!-- Deben coincidir la frase que esta en el for de label con el id de input -->
-              <label for="dato_privado">Contraseña</label>
-              <input type="password" id="dato_privado" name="contraseña">
-              <input type="submit">
+          <form class="form_container" action="#" method="get">
+              <div class="form_group">
+                  <label for="nombre" class="form_label">Usuario:</label>
+                  <input type="text" id="nombre" name="nombre" class="form_input">
+              </div>
+                <!-- Placeholder= atributo que pone un texto de ejemplo como relleno en el form -->
+                <div class="form_group">
+                  <label for="dato_privado" class="form_label"  placeholder="*********">Contraseña:</label>
+                  <input  class="form_input" type="password" id="dato_privado" name="contraseña">     
+                </div> 
+                <!-- Deben coincidir la frase que esta en el for de label con el id de input -->
+                <input type="submit" class="form_submit">
           </form>
-          <h4 class="tit4">Gracias por realizar tu compra!!</h4>
-        </section class="form">
+          <h4 class="tit4">Gracias por asociarte con nosotros!!</h4>
+        </section>
     </main>
   
        <!-- --------- PIE DE PAGINA --------- -->
