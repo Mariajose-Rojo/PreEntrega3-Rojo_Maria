@@ -26,8 +26,6 @@ body {
   padding-bottom: 3em;
   position: relative;
   min-height: 100vw; }
-  body h2 {
-    font-family: "Madimi One", sans-serif; }
 
 .titulo_principal, .main_index .titulo1, .main_nosotros .titulo1, .main_catalogo .titulo1, .main_blog h1, .grid_contacto .cabecera .titulo1 {
   font-family: "Mochiy Pop P One", sans-serif;
@@ -37,6 +35,13 @@ body {
   margin-bottom: 20px;
   margin-top: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); }
+
+.titulo_secundario, .grid_contacto .apartado h2, .grid_contacto .form h2 {
+  font-family: "Madimi One", sans-serif;
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-left: 1rem; }
 
 .texto_centrado_box, .main_index .grid_container .texto_top, .main_index .grid_container .texto_ofertas, .main_index .grid_container .texto_snack {
   display: flex;
