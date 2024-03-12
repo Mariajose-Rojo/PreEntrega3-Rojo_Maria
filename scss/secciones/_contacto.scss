@@ -25,7 +25,11 @@
     .apartado{
         grid-area: aside;
         background-color: rgb(116, 238, 238);
+        h2{
+            @extend .titulo_secundario;
+        }
     }
+
     
     // ESTILO  DEL FORMULARIO
     .form{
@@ -44,6 +48,10 @@
         // 0 5px 10px -5px rgb(0 0 0 /30%)
 
         gap: 1.5rem;
+
+        h2{
+            @extend .titulo_secundario;
+        }
 
         .form_container{
             margin-top: 1.5rem;
