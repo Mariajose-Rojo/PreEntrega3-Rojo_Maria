@@ -5,7 +5,6 @@
     .header{
         // imagen banner= solo del index
     .header__banner{
-            
             .banner_promo img{
                 /* le pongo 100vw si quiero que ocupe el total de la pantalla y 100% si quiero que ocupe el total de mi caja*/
                 width: 100%;
@@ -44,13 +43,15 @@
     
         .texto_top {
             grid-area: section1;
-            background-color: aquamarine;
-            box-shadow: $sombra_box;
+            background-color:$verde;
+            @extend .texto_centrado_box;
+            .boton{
+                @extend .boton_seleccion;
+            }
         }
     
         .img_top{
             grid-area: img_top;
-            box-shadow: $sombra_box;
             background-color: rgb(255, 250, 96);
             @include img_fondo('https://dunkin.cl/wp-content/uploads/2022/04/donuts-inicio-chile-300x300.png');
         }
@@ -59,8 +60,11 @@
         
         .texto_ofertas{
             grid-area: section2;
-            background-color: rgb(251, 118, 223);
-            box-shadow: $sombra_box;
+            background-color: $verde;
+            @extend .texto_centrado_box;
+            .boton{
+                @extend .boton_seleccion;
+            }
         }
     
         .img_ofertas{
@@ -71,7 +75,11 @@
 
         .texto_snack {
             grid-area: section3;
-            background-color: aquamarine;
+            background-color: $verde;
+            @extend .texto_centrado_box;
+            .boton{
+                @extend .boton_seleccion;
+            }
         }
     
         .img_snack{
@@ -84,8 +92,25 @@
 
 }
 
+// Pseudoclase para el boton:
+.main_index .grid_container .boton:hover{
+    background-color: $celeste;
+}
 
-@media (max-width: 600px){
+@media (max-width: 650px){
+
+    .main_index .grid_container{
+        grid-template-columns: repeat(1, 100%);
+        grid-template-areas: 
+        "section1"
+        "img_top" 
+        "section2"
+        "img_oferta"
+        "section3"
+        "img_snack"
+        ;
+
+    }
 
     /* cambiar tamaño de la grilla del index */
     // .main_index .grid_container{

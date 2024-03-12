@@ -32,7 +32,18 @@ body {
   margin-top: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); }
 
-.boton_seleccion, .container_p1 .box_container .box .boton, .grid_contacto .form .form_container .form_submit {
+.texto_centrado_box, .main_index .grid_container .texto_top, .main_index .grid_container .texto_ofertas, .main_index .grid_container .texto_snack {
+  display: flex;
+  /* el contenido se alinee correctamente */
+  flex-direction: column;
+  align-items: center;
+  /* Centra verticalmente el contenido */
+  justify-content: center;
+  /* Centra horizontalmente el contenido */
+  text-align: center;
+  padding: 2rem; }
+
+.boton_seleccion, .main_index .grid_container .texto_top .boton, .main_index .grid_container .texto_ofertas .boton, .main_index .grid_container .texto_snack .boton, .container_p1 .box_container .box .boton, .grid_contacto .form .form_container .form_submit {
   display: inline-block;
   font-size: 16px;
   font-weight: 300px;
@@ -41,7 +52,6 @@ body {
   background-color: #f388e6;
   color: #333;
   padding: 8px 18px;
-  border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -94,11 +104,9 @@ body {
     margin-top: 1rem; }
     .main_index .grid_container .texto_top {
       grid-area: section1;
-      background-color: aquamarine;
-      box-shadow: -1px 2px 15px 0px #646262; }
+      background-color: #86EACC; }
     .main_index .grid_container .img_top {
       grid-area: img_top;
-      box-shadow: -1px 2px 15px 0px #646262;
       background-color: #fffa60;
       background-image: url("https://dunkin.cl/wp-content/uploads/2022/04/donuts-inicio-chile-300x300.png");
       background-position: center;
@@ -107,8 +115,7 @@ body {
       background-repeat: no-repeat; }
     .main_index .grid_container .texto_ofertas {
       grid-area: section2;
-      background-color: #fb76df;
-      box-shadow: -1px 2px 15px 0px #646262; }
+      background-color: #86EACC; }
     .main_index .grid_container .img_ofertas {
       grid-area: img_oferta;
       background-color: #f388e6;
@@ -119,7 +126,7 @@ body {
       background-repeat: no-repeat; }
     .main_index .grid_container .texto_snack {
       grid-area: section3;
-      background-color: aquamarine; }
+      background-color: #86EACC; }
     .main_index .grid_container .img_snack {
       grid-area: img_snack;
       background-color: #fffa60;
@@ -129,7 +136,13 @@ body {
       /* Ajusta el tamaño de la imagen para que se ajuste dentro del contenedor */
       background-repeat: no-repeat; }
 
-@media (max-width: 600px) {
+.main_index .grid_container .boton:hover {
+  background-color: #6cbff3; }
+
+@media (max-width: 650px) {
+  .main_index .grid_container {
+    grid-template-columns: repeat(1, 100%);
+    grid-template-areas: "section1" "img_top"  "section2" "img_oferta" "section3" "img_snack"; }
   /* cambiar tamaño de la grilla del index */ }
 
 /* ------------------ PAGE 2------------------ */
@@ -418,7 +431,7 @@ body {
   .main_catalogo .container_p1 .box_container {
     grid-template-columns: repeat(1, 100%); } }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   /* cambiar el color del fondo del navegador y ubicacion del logo*/
   .header .header__logo {
     justify-content: center;

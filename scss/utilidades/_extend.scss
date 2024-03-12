@@ -9,6 +9,15 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.texto_centrado_box{
+    display: flex; /* el contenido se alinee correctamente */
+    flex-direction: column; 
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    text-align: center;
+    padding: 2rem;
+}
+
 .boton_seleccion{
 
     display: inline-block;
@@ -20,7 +29,7 @@
     color: #333;
 
     padding: 8px 18px;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     border-radius: 4px;
 
     cursor: pointer;
